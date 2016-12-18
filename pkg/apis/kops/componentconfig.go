@@ -389,6 +389,9 @@ type KubeAPIServerConfig struct {
 	// Use this to enable alpha resources on kube-apiserver
 	RuntimeConfig map[string]string `json:"runtimeConfig,omitempty" flag:"runtime-config"`
 
+    AuthorizationMode          string `json:"authorizationMode,omitempty" flag:"authorization-mode"`
+    AuthorizationRbacSuperUser string `json:"authorizationRbacSuperUser,omitempty" flag:"authorization-rbac-super-user"`
+
 	AnonymousAuth *bool `json:"anonymousAuth,omitempty" flag:"anonymous-auth"`
 }
 

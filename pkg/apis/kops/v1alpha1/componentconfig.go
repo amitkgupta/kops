@@ -386,6 +386,9 @@ type KubeAPIServerConfig struct {
 	APIServerCount        *int              `json:"apiServerCount,omitempty" flag:"apiserver-count"`
 	RuntimeConfig         map[string]string `json:"runtimeConfig,omitempty" flag:"runtime-config"`
 
+    AuthorizationMode string          `json:"authorizationMode,omitempty" flag:"authorization-mode"`
+    AuthorizationRbacSuperUser string `json:"authorizationRbacSuperUser,omitempty" flag:"authorization-rbac-super-user"`
+
 	AnonymousAuth *bool `json:"anonymousAuth,omitempty" flag:"anonymous-auth"`
 }
 

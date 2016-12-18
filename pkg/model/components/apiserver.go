@@ -44,6 +44,20 @@ func (b *KubeAPIServerOptionsBuilder) BuildOptions(o interface{}) error {
 		options.KubeAPIServer.APIServerCount = fi.Int(count)
 	}
 
+    if options.KubeAPIServer.RuntimeConfig == nil {
+        options.KubeAPIServer.RuntimeConfig = map[string]string{
+            "rbac.authorization.k8s.io/v1alpha1": "true",
+        }
+    }
+
+    if options.KubeAPIServer.AuthorizationMode == "" {
+        options.KubeAPIServer.AuthorizationMode = "AlwaysAllow,RBAC"
+    }
+
+    if options.KubeAPIServer.AuthorizationRbacSuperUser == "" {
+        options.KubeAPIServer.AuthorizationRbacSuperUser = "kubecfg"
+    }
+
 	return nil
 }
 
