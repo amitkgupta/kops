@@ -392,6 +392,8 @@ type KubeAPIServerConfig struct {
     AuthorizationMode          string `json:"authorizationMode,omitempty" flag:"authorization-mode"`
     AuthorizationRbacSuperUser string `json:"authorizationRbacSuperUser,omitempty" flag:"authorization-rbac-super-user"`
 
+    ServiceNodePortRange string `json:"serviceNodePortRange,omitempty" flag:"service-node-port-range"`
+
 	AnonymousAuth *bool `json:"anonymousAuth,omitempty" flag:"anonymous-auth"`
 }
 

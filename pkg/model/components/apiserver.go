@@ -58,6 +58,10 @@ func (b *KubeAPIServerOptionsBuilder) BuildOptions(o interface{}) error {
         options.KubeAPIServer.AuthorizationRbacSuperUser = "kubecfg"
     }
 
+    if options.KubeAPIServer.ServiceNodePortRange == "" {
+        options.KubeAPIServer.ServiceNodePortRange = "30000-30099"
+    }
+
 	return nil
 }
 
